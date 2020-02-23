@@ -19,7 +19,8 @@ $(window).on('load', function() {
 	$(".loader").fadeOut(); 
 	$("#preloder").delay(400).fadeOut("slow");
 
-	__portfolio(); // call portfolio function
+	__portfolio(); 
+
 
 });
 
@@ -35,10 +36,6 @@ $(window).on('load', function() {
 	});
 
 
-
-	/*------------------
-		Background set
-	--------------------*/
 	$('.set-bg').each(function() {
 		var bg = $(this).data('setbg');
 		$(this).css('background-image', 'url(' + bg + ')');
@@ -117,6 +114,7 @@ $(window).on('load', function() {
 			$(this).dequeue().removeClass('__loading')
 		});
 	}
+	
 	/* Projects filter */
 	$('.projects-filter-nav li').on('click', function(e) {
 		var filter_data = $(this).data('filter');
@@ -127,7 +125,7 @@ $(window).on('load', function() {
 		/* active current */
 		$(this).addClass('btn-active').siblings().removeClass('btn-active');
 
-		/* Filter */
+
 		project.owlFilter(filter_data, function(_owl) { 
 			$(_owl).find('.single-project').each(owlAnimateFilter); 
 		});
@@ -321,4 +319,5 @@ function portfolio_item_size(){
 			$(this).css('height', Math.abs(pi_height1));
 		}
 	});
+
 }
